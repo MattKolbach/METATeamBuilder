@@ -33,7 +33,9 @@ The user is to answer command line prompts. These prompts will be about who is o
 
 ## Required Homework Files
 
--
+- Recording of application in use: https://watch.screencastify.com/v/sIuJ79OPtqfTwJGFPVAk
+- GitHub link: https://github.com/MattKolbach/OrgChartBuilder
+- Preview picture:
+![image](https://user-images.githubusercontent.com/94270439/153774009-a09b421c-eaac-4234-a153-d469165d7bb7.png)
 
 
-https://watch.screencastify.com/v/sIuJ79OPtqfTwJGFPVAk
