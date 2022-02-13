@@ -1,0 +1,32 @@
+body {
+  background-color: #ffcc00;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background-image: url("../images/phone-gba88ccd58_1920.jpg");
+
+  height: 100%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card {
+  margin: 10px;
+  background-color: #fff0b3;
+}
+
+h1 {
+    color:aliceblue;
+    text-align: center;
+}
+
+.list-group-item {
+    background-color: #fff0b3;    
+}
+
+

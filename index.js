@@ -6,28 +6,7 @@ const Intern = require("./lib/Intern");
 const generatePage = require("./utils/generatePage");
 const employeeArray = [];
 
-// WHEN I start the application
-// THEN I am prompted to enter the team manager’s name, employee ID, email address, and office number
-// WHEN I enter the team manager’s name, employee ID, email address, and office number
-// THEN I am presented with a menu with the option to add an engineer or an intern or to finish building my team
-// WHEN I select the engineer option
-// THEN I am prompted to enter the engineer’s name, ID, email, and GitHub username, and I am taken back to the menu
-// WHEN I select the intern option
-// THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
-// WHEN I decide to finish building my team
-// THEN I exit the application, and the HTML is generated
 
-/*
-start application
-CL prompt for team manager's:name, employee ID, email address, and office number
-then: option to add engineer or intern or done
-engineer option: prompt for: name, ID, email, and GitHub username -- auto return to option
-intern option: name, ID, email, and school -- auto return to option
-done option: exit app and generate HTML
-
-Create common 
-
-*/
 /////  prompt questions  /////
 const managerQuestions = () => {
   inquirer
@@ -46,18 +25,18 @@ const managerQuestions = () => {
         },
       },
       {
-        type: "input",
+        type: "number",
         name: "employeeId",
         message: "What is the employee's ID?",
         validate: (employeeIdInput) => {
-          if (employeeIdInput) {
-            return true;
-          } else {
-            console.log("Please enter your ID number.");
-            return false;
-          }
+            if (typeof(employeeIdInput) === 'number') {
+              return true;
+            } else {
+              console.log("Please enter the employee ID number.");
+              return false;
+            }
+          },
         },
-      },
       {
         type: "input",
         name: "emailAddress",
@@ -115,18 +94,18 @@ const engineerQuestions = () => {
         },
       },
       {
-        type: "input",
+        type: "number",
         name: "employeeId",
         message: "What is the employee's ID?",
         validate: (employeeIdInput) => {
-          if (employeeIdInput) {
-            return true;
-          } else {
-            console.log("Please enter your ID number.");
-            return false;
-          }
+            if (typeof(employeeIdInput) === 'number') {
+              return true;
+            } else {
+              console.log("Please enter the employee ID number.");
+              return false;
+            }
+          },
         },
-      },
       {
         type: "input",
         name: "emailAddress",
@@ -184,14 +163,14 @@ const internQuestions = () => {
         },
       },
       {
-        type: "input",
+        type: "number",
         name: "employeeId",
         message: "What is the employee's ID?",
         validate: (employeeIdInput) => {
-          if (employeeIdInput) {
+          if (typeof(employeeIdInput) === 'number') {
             return true;
           } else {
-            console.log("Please enter your ID number.");
+            console.log("Please enter the employee ID number.");
             return false;
           }
         },
@@ -238,7 +217,7 @@ const internQuestions = () => {
 
 const doneAddingEmployees = () => {
   const generatePageComplete = generatePage(employeeArray);
-  writeToFile("./dist/testIndex.html", generatePageComplete);
+  writeToFile("./dist/Index.html", generatePageComplete);
 };
 
 function writeToFile(fileName, data) {
